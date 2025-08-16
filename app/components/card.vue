@@ -29,7 +29,7 @@ const metadata = computed(() => {
 const background = computed(() => {
   return metadata.value.attributes.find(attribute => attribute.trait_type === "Background")?.value || "Sea"
 })
-const color = backgroundColors[background.value]
+const color = backgroundColors[background.value as (keyof typeof backgroundColors)]
 </script>
 
 <template lang="pug">
@@ -51,7 +51,6 @@ const color = backgroundColors[background.value]
   gap: 30px;
   padding: 15px;
   border-radius: 35px;
-  align-self: center;
 }
 
 .nft {

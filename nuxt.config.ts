@@ -1,4 +1,5 @@
 import vueCssModule from "@inetss/vite-plugin-vue-css-module"
+import { nodePolyfills } from "vite-plugin-node-polyfills"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -27,6 +28,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       vueCssModule({ attrName: "mclass", pugClassLiterals: true }),
+      nodePolyfills(),
     ],
     css: {
       preprocessorOptions: {
